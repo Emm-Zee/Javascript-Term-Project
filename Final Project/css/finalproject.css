@@ -1,0 +1,305 @@
+﻿/* 
+responsive theme initially sourced from https://www.w3schools.com/w3css/tryw3css_templates_band.htm
+*/
+
+html{box-sizing:border-box;
+}*,
+*:before,
+*:after{
+    box-sizing:inherit
+}
+
+body{    
+    font-family:Arial,sans-serif;
+    }
+
+header,footer{
+    display:block
+    }
+
+    
+.button{
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    text-decoration:none;
+    color:inherit;
+    text-align:center;
+    color:#F2668B;
+    background-color:#011F26;
+}   
+
+.button2{
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    text-decoration:none;
+    color:inherit;
+    text-align:center;
+    color: #011F26;
+    background-color:#03A688;
+}   
+
+
+.button:hover{
+    color:#011F26;
+    background-color:#F2668B;
+}
+
+a:hover{
+    color:#011F26;
+    background-color:#03A688;
+}
+
+.bar {
+    width:100%;
+    min-width:100%;
+    text-align:left;
+    padding:8px 16px;
+}
+
+.grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+    .grow:hover { 
+    transform: scale(1.1); 
+    box-shadow:10px 10px 10px 10px rgba(0,0,0,0.16),10px 10px 10px 10px  rgba(0,0,0,0.12)
+    }
+
+
+/* Colors */
+.background{
+    color:#F2668B;
+    background-color:#011F26;
+
+}
+.details{
+    color:#011F26;
+    background-color:#03A688;
+    display:block;
+    min-height: 10em;
+    max-height: 15em;;
+}
+
+details,figcaption,figure,footer,header,main,menu,section{display:block}summary{display:list-item}
+
+/*alignment*/
+.center{
+    text-align:center;
+}
+
+.container{
+    padding:0.01em 16px}
+
+.panel{
+        padding:0.01em 16px;
+        margin-top:16px;
+        margin-bottom:16px
+    }
+
+.card{
+    box-shadow:0 5px 20px 0 rgba(0,0,0,0.5),0 5px 20px 0 rgba(0,0,0,0.5)
+}
+
+/*padding*/
+.margin-top{
+    margin-top:16px;
+}
+
+.margin-bottom{
+    margin-bottom:16px!important
+}
+
+.padding{
+    padding:8px 16px!important
+
+}
+.padding-large{
+    padding:12px 24px
+}
+.padding-32{
+    padding-top:32px;
+    padding-bottom:32px
+}
+
+.bar-block .bar-item{
+    width:100%;
+    display:block;
+    padding:8px 16px;
+    text-align:left;
+    border:none;
+    white-space:normal;
+    float:none;
+    outline:0
+}
+
+.row-padding:after,.row-padding:before{
+    content:"";
+    display:table;
+    clear:both}
+
+.half{
+    float:left;width:100%
+}
+
+.backgroundimage{
+    background-image:url('../media/background2.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Music Trivia */
+
+#MoveMe1, #MoveMe2, #MoveMe3, #MoveMe4, #MoveMe5, #MoveMe6, #MoveMe7, #MoveMe8, #MoveMe9, 
+#MoveMe10, #MoveMe11, #MoveMe12, #MoveMe13
+{
+   font-size: 1em;
+   margin-left: 1em;
+   margin-right: 1em;
+   padding: .55em;
+   background-color: #011F26;
+   color: white;
+  }
+
+nav {
+  float: left;
+  width: 45%;
+  background-color: #03A688;
+  }
+
+article {
+  float: right;
+  width: 55%;
+  padding-left: 3%;
+  padding-right: 3%;
+  }
+  
+.answerbox{
+  background-color: black;
+   min-height: 3em;
+   width: 100%;
+}
+
+.scroll{
+    overflow-y: auto;
+    height: 100vw;
+}
+
+
+
+
+/* POTATOHEAD CSS */
+
+.draggable {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .draggable.is-dragging { opacity: 0.7; 
+  position:relative;
+    top:100;left:100;
+  }
+  
+  .potato{
+      width: 45%;
+      height: 45%;
+      float: right;
+      margin-right: 20%;
+    }
+  
+  .size{
+    width: 100%; 
+  }
+
+  
+  /* Modal */
+
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #03A688;
+    color: black;
+    margin: 20% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+/* modal close hover settings */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*media widths */
+
+.col-1{width:8.33333%}
+.col-2{width:16.66666%}
+.col-3{width:24.99999%}
+.col-4{width:33.33333%}
+.col-5{width:41.66666%}
+.col-6{width:49.99999%}
+.col-7{width:58.33333%}
+.col-8{width:66.66666%}
+.col-9{width:74.99999%}
+.col-10{width:83.33333%}
+.col-11{width:91.66666%}
+.col12{width:99.99999%}
+
+@media (min-width:601px){.col.m1{width:8.33333%}.col.m2{width:16.66666%}.col.m3,.quarter{width:24.99999%}.col.m4,.third{width:33.33333%}
+.col.m5{width:41.66666%}.col.m6,.half{width:49.99999%}.col.m7{width:58.33333%}.col.m8,.twothird{width:66.66666%}
+.col.m9,.threequarter{width:74.99999%}.col.m10{width:83.33333%}.col.m11{width:91.66666%}.col.m12{width:99.99999%}}
+
+@media (min-width:993px){.col.l1{width:8.33333%}.col.l2{width:16.66666%}.col.l3{width:24.99999%}.col.l4{width:33.33333%}
+.col.l5{width:41.66666%}.col.l6{width:49.99999%}.col.l7{width:58.33333%}.col.l8{width:66.66666%}
+.col.l9{width:74.99999%}.col.l10{width:83.33333%}.col.l11{width:91.66666%}.col.l12{width:99.99999%}}
+.content{margin-left:auto;margin-right:auto}.content{max-width:980px}.auto{max-width:1140px}
+.hide{display:none}.show{display:block}
+
+@media (max-width:1205px){.auto{max-width:95%}}
+
+@media (max-width:600px){.hide-small{display:none}.mobile{display:block;width:100%}.bar-item,
+.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{text-align:center}}
+
+@media (min-width:993px){.hide-large{display:none}}
+
+@media (max-width:992px) and (min-width:601px){.hide-small{display:none}.mobile{display:block;width:100%}.bar-item,
+.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{text-align:center}}
+
+@media (max-width:992px){.main{margin-left:0;margin-right:0}.auto{max-width:100%}}
+.top {position:absolute; width: 100%; z-index:1; top:0}
+.half{padding:0 8px}
+
+
+
+

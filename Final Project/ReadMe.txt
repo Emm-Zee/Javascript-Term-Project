@@ -1,0 +1,1 @@
+Gamezzz Galore is a game site that offers fresh takes on classic games so that they can be enjoyed by both children and adults.© Emily Crull, 2022. The materials on this website may be freely copied and distributed so long as our copyright notice and website address is included.
