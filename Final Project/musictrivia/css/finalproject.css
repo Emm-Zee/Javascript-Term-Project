@@ -9,9 +9,10 @@ html{box-sizing:border-box;
     box-sizing:inherit
 }
 
-body{    
+body{
+    width:100%;
     font-family:Arial,sans-serif;
-    }
+}
 
 header,footer{
     display:block
@@ -32,17 +33,23 @@ header,footer{
 
 .button2{
     border:none;
-    left: 0;
-    margin: 1em;
+    display:inline-block;
+    vertical-align:middle;
+    margin-top: 5%;
+    margin-right: 1%;
+    margin-left: 1%;
     padding:8px 16px;
-    float: left;
     text-decoration:none;
-    color:inherit;
     text-align:center;
     color: #011F26;
     background-color:#03A688;
 }   
 
+section{
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
 
 .button:hover{
     color:#011F26;
@@ -77,13 +84,7 @@ a:hover{
     background-color:#011F26;
 
 }
-.details{
-    color:#011F26;
-    background-color:#03A688;
-    display:block;
-    min-height: 10em;
-    max-height: 15em;;
-}
+
 
 details,figcaption,figure,footer,header,main,menu{display:block}summary{display:list-item}
 
@@ -92,14 +93,7 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     text-align:center;
 }
 
-.container{
-    padding:0.01em 16px}
 
-.panel{
-        padding:0.01em 16px;
-        margin-top:16px;
-        margin-bottom:16px
-    }
 
 .card{
     box-shadow:0 5px 20px 0 rgba(0,0,0,0.5),0 5px 20px 0 rgba(0,0,0,0.5)
@@ -142,12 +136,8 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     display:table;
     clear:both}
 
-.half{
-    float:left;width:100%
-}
-
 .backgroundimage{
-    background-image:url('../media/background2.jpg');
+    background-image:url('../../media/background2.jpg');
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -155,88 +145,109 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     background-size: cover;
 }
 
+
+
 /*Music Trivia */
 
-section{
-    float: left;
-}
-.triviacontainer{
-    font-family: "Trebuchet MS", sans-serif;
+#dragScriptContainer{	/* BIG DIV containing HTML needed for the entire script */
+    width:100%;
+    height: 100%;
     display: flex;
-    gap: 30px;
+    margin:0 auto;
+    margin: 2%;
 }
 
-.containercolumn{
-    font-family: "Trebuchet MS", sans-serif;
-    flex-direction: column;
+#questionDiv{	/* Big div for all the questions */
+    float:left;
+    width:70%;
+    margin: 2%;
+}
+#answerDiv{	/* Big div for all the answers */
+    float:right;
+    width:20%;
+    margin-top: 2%;
 }
 
-.answerlist{
-    flex-basis: 20%;
-    background: #ddd;
-    min-height: 90vh;
-    padding: 20px;
+#answerDiv div{	/* General rules for small divs - i.e. specific questions and answers */
+    width:100%;
+    min-height:20px;
+    line-height:20px;		
+    float:left;
+    margin-right:2px;
+    margin-bottom:2px;
+    text-align:center;
+    background-color: white;
+}
+
+#questionDiv div {	/* General rules for small divs - i.e. specific questions and answers */
+    width:100%;
+    min-height:20px;
+    line-height:20px;		
+    float:left;
+    text-align:left;
+    background-color: #fff;
     border-radius: 10px;
 }
 
-.answerbox{
-    flex-basis: 20%;
-    background: #ddd;
-    min-height: 10vh;
-    max-height: 20vh;
-    padding: .1em;
+#dragContent div{	 /*General rules for small divs - i.e. specific questions and answers*/
+    width:100%;
+    min-height:20px;
+    line-height:20px;		
+    float:left;
+    text-align:center;
+}
+
+#answerDiv .dragDropSmallBox{	/*Small answer divs*/
+    border:1px solid #000;
+    cursor:pointer;
     border-radius: 10px;
 }
 
-.column h1{
-    text-align: center;
-    font-size: 22px;
-}
-.item{
-    background: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-.invisible{
-    display: none;
+#questionDiv .dragDropSmallBox{	/*Small answer divs*/
+    background-color: #F2668B;
+    font-weight: bold;
+    cursor:pointer;    
 }
 
+#questionDiv .destinationBox{	/* Small empty boxes for the questions - i.e. where answers could be dragged */
+    width:30%;
+    height:22px;
+    border-radius: 10px;  
+}
 
+#questionDiv .correctAnswer{	/* CSS indicating correct answer */
+    background-color:#03A688;
+    padding-left: 10%;
+    color:#fff;
+    border:1px solid white;
+}
+#questionDiv .wrongAnswer{	/* CSS indicating wrong answer */
+    background-color:red;
+    padding-left: 10%;
+    color:black;
+    border:1px solid black;
+}
 
-/* POTATOHEAD CSS */
-
-.draggable {
-    width: 200px;
-    height: auto;
+#dragContent{
+    position:absolute;
+    min-width:20%;
+    max-width: 30%;
+    border: 1px solid black;
+    min-height:20px;
+    line-height:20px;		
+    float:left;
+    margin-right:2px;
+    margin-bottom:2px;
+    text-align:center;
+    background-color: white;
     border-radius: 10px;
-    margin-bottom: 5px;
-  }
+    padding-left: 2%;
+    padding-right: 2%;
+}	
   
-  .draggable.is-dragging { opacity: 0.7; 
-  position:relative;
-    top:100;left:100;
-  }
-  
-  .potato{
-      position: absolute;
-      height: 70%;
-      float: right;
-      margin-right: 13%;
-      margin-bottom: 2%;
-      bottom: 0;
-      right: 0;
-    }
-  
-  .size{
-    width: 100%; 
-  }
+/* Modal */
 
-  
-  /* Modal */
-
-  /* The Modal (background) */
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -313,7 +324,3 @@ section{
 @media (max-width:992px){.main{margin-left:0;margin-right:0}.auto{max-width:100%}}
 .top {position:absolute; width: 100%; z-index:1; top:0}
 .half{padding:0 8px}
-
-
-
-
