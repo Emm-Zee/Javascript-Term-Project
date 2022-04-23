@@ -2,6 +2,8 @@
 responsive theme initially sourced from https://www.w3schools.com/w3css/tryw3css_templates_band.htm
 */
 
+
+
 html{box-sizing:border-box;
 }*,
 *:before,
@@ -12,12 +14,14 @@ html{box-sizing:border-box;
 body{
     width:100%;
     font-family:Arial,sans-serif;
+    background-color: #F2668B;
+    overflow-x: hidden;
 }
 
-header,footer{
-    display:block
+.grid-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
     }
-
     
 .button{
     border:none;
@@ -46,10 +50,8 @@ header,footer{
 }   
 
 section{
-text-align: center;
-margin-left: auto;
-margin-right: auto;
-}
+    text-align: center;
+    }
 
 .button:hover{
     color:#011F26;
@@ -68,6 +70,7 @@ a:hover{
     padding:8px 16px;
 }
 
+
 .grow { 
     transition: all .2s ease-in-out; 
     }
@@ -82,17 +85,11 @@ a:hover{
 .background{
     color:#F2668B;
     background-color:#011F26;
-
 }
 
+.top {position:absolute; width: 100%; z-index:1; top:0}
 
 details,figcaption,figure,footer,header,main,menu{display:block}summary{display:list-item}
-
-/*alignment*/
-.center{
-    text-align:center;
-}
-
 
 
 .card{
@@ -108,16 +105,13 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     margin-bottom:16px!important
 }
 
-.padding{
-    padding:8px 16px!important
 
-}
 .padding-large{
     padding:12px 24px
 }
 .padding-32{
-    padding-top:32px;
-    padding-bottom:32px
+    padding-top:30px;
+    padding-bottom:0px
 }
 
 .bar-block .bar-item{
@@ -136,39 +130,46 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     display:table;
     clear:both}
 
-.backgroundimage{
-    background-image:url('../../media/background2.jpg');
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.decoration{
+    border:none;
+    display:inline-block;
+    padding:2px 8px;
+    vertical-align:middle;
+    text-decoration:none;
+    color:inherit;
+    text-align:center;
+    color:#03A688;
+    background-color:#011F26;
+    font-size: .75em;
 }
 
-
+.decoration:hover{
+    color:#F2668B;
+    background-color:#011F26;
+}
 
 /*Music Trivia */
 
 #dragScriptContainer{	/* BIG DIV containing HTML needed for the entire script */
-    width:100%;
-    height: 100%;
-    display: flex;
+
     margin:0 auto;
     margin: 2%;
 }
 
 #questionDiv{	/* Big div for all the questions */
     float:left;
-    width:70%;
     margin: 2%;
 }
 #answerDiv{	/* Big div for all the answers */
+    padding-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
     float:right;
-    width:20%;
+    width: 70%;
     margin-top: 2%;
 }
 
-#answerDiv div{	/* General rules for small divs - i.e. specific questions and answers */
+#answerDiv div{	/* General rules for small divs - i.e. specific answers */
     width:100%;
     min-height:20px;
     line-height:20px;		
@@ -179,7 +180,7 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     background-color: white;
 }
 
-#questionDiv div {	/* General rules for small divs - i.e. specific questions and answers */
+#questionDiv div {	/* General rules for small divs - i.e. specific questions */
     width:100%;
     min-height:20px;
     line-height:20px;		
@@ -189,29 +190,20 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     border-radius: 10px;
 }
 
-#dragContent div{	 /*General rules for small divs - i.e. specific questions and answers*/
-    width:100%;
-    min-height:20px;
-    line-height:20px;		
-    float:left;
-    text-align:center;
-}
-
 #answerDiv .dragDropSmallBox{	/*Small answer divs*/
     border:1px solid #000;
     cursor:pointer;
     border-radius: 10px;
 }
 
-#questionDiv .dragDropSmallBox{	/*Small answer divs*/
+#questionDiv .dragDropSmallBox{	/*Small question divs*/
     background-color: #F2668B;
     font-weight: bold;
+    font-size: 1em;
     cursor:pointer;    
 }
 
 #questionDiv .destinationBox{	/* Small empty boxes for the questions - i.e. where answers could be dragged */
-    width:30%;
-    height:22px;
     border-radius: 10px;  
 }
 
@@ -221,6 +213,7 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     color:#fff;
     border:1px solid white;
 }
+
 #questionDiv .wrongAnswer{	/* CSS indicating wrong answer */
     background-color:red;
     padding-left: 10%;
@@ -229,9 +222,8 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
 }
 
 #dragContent{
+    width:30%;
     position:absolute;
-    min-width:20%;
-    max-width: 30%;
     border: 1px solid black;
     min-height:20px;
     line-height:20px;		
@@ -286,6 +278,9 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
 }
 
 
+
+
+
 /*media widths */
 
 .col-1{width:8.33333%}
@@ -314,13 +309,16 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
 @media (max-width:1205px){.auto{max-width:95%}}
 
 @media (max-width:600px){.hide-small{display:none}.mobile{display:block;width:100%}.bar-item,
-.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{text-align:center}}
+.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{text-align:center;} #answerDiv{padding-top: 55%;} #questionDiv 
+.dragDropSmallBox{line-height: 100%; padding-top: 2%;font-size: .75em;} #answerDiv div{font-size: .75em;} #dragContent{font-size: .75em; width: 35%;}
+.grid-container {grid-template-columns: 50% 50%;} .padding-32{padding-top:32px; padding-bottom:32px;} #questionDiv .destinationBox{font-size: .75em;}}
+
 
 @media (min-width:993px){.hide-large{display:none}}
 
 @media (max-width:992px) and (min-width:601px){.hide-small{display:none}.mobile{display:block;width:100%}.bar-item,
-.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{text-align:center}}
+.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{text-align:center;} .padding-32{padding-top:32px; padding-bottom:32px;}
+#answerDiv{padding-top: 50%;}}
 
-@media (max-width:992px){.main{margin-left:0;margin-right:0}.auto{max-width:100%}}
+@media (max-width:992px){.main{margin-left:0;margin-right:0}.auto{max-width:100%;}}
 .top {position:absolute; width: 100%; z-index:1; top:0}
-.half{padding:0 8px}

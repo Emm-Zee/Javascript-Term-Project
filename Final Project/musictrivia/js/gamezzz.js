@@ -8,9 +8,7 @@ x.className = x.className.replace(" show", "");
 }
 }
 
-document.getElementById("musicTrivia").onclick = function MusicTrivia() {
-    location.href = "musictrivia/musictrivia.html";
-};
+
 document.getElementById("puzzle").onclick = function Puzzle() {
     location.href = "puzzle/puzzle.html";
 };

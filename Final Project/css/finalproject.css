@@ -146,15 +146,6 @@ details,figcaption,figure,footer,header,main,menu{display:block}summary{display:
     float:left;width:100%
 }
 
-.backgroundimage{
-    background-image:url('../media/background2.jpg');
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 /*Music Trivia */
 
 section{
